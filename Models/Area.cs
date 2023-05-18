@@ -8,7 +8,7 @@ public partial class Area
 {
 
     [Required(ErrorMessage = "El Código es obligatorio")]
-    [RegularExpression("[0-9]")]
+    [RegularExpression("[0-]")]
     public int Codigo { get; set; }
 
     [Required(ErrorMessage = "El Nombre es obligatorio")]

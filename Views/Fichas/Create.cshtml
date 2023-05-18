@@ -1,0 +1,79 @@
+﻿@model PROYECTORADIX.Models.Ficha
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ficha</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPrograma" class="control-label"></label>
+                <select asp-for="IdPrograma" class ="form-control" asp-items="ViewBag.IdPrograma"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdJornada" class="control-label"></label>
+                <select asp-for="IdJornada" class ="form-control" asp-items="ViewBag.IdJornada"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTipoFormacion" class="control-label"></label>
+                <select asp-for="IdTipoFormacion" class ="form-control" asp-items="ViewBag.IdTipoFormacion"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdModalidad" class="control-label"></label>
+                <select asp-for="IdModalidad" class ="form-control" asp-items="ViewBag.IdModalidad"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIniciolectiva" class="control-label"></label>
+                <input asp-for="FechaIniciolectiva" class="form-control" />
+                <span asp-validation-for="FechaIniciolectiva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFinallectiva" class="control-label"></label>
+                <input asp-for="FechaFinallectiva" class="form-control" />
+                <span asp-validation-for="FechaFinallectiva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIniciopractica" class="control-label"></label>
+                <input asp-for="FechaIniciopractica" class="form-control" />
+                <span asp-validation-for="FechaIniciopractica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFinalpractica" class="control-label"></label>
+                <input asp-for="FechaFinalpractica" class="form-control" />
+                <span asp-validation-for="FechaFinalpractica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdInstructorlider" class="control-label"></label>
+                <input asp-for="IdInstructorlider" class="form-control" />
+                <span asp-validation-for="IdInstructorlider" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,76 @@
+﻿@model PROYECTORADIX.Models.Programa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Programa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Creditos" class="control-label"></label>
+                <input asp-for="Creditos" class="form-control" />
+                <span asp-validation-for="Creditos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VersionPrograma" class="control-label"></label>
+                <input asp-for="VersionPrograma" class="form-control" />
+                <span asp-validation-for="VersionPrograma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuracionLectiva" class="control-label"></label>
+                <input asp-for="DuracionLectiva" class="form-control" />
+                <span asp-validation-for="DuracionLectiva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuracionProductiva" class="control-label"></label>
+                <input asp-for="DuracionProductiva" class="form-control" />
+                <span asp-validation-for="DuracionProductiva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTipodeformacion" class="control-label"></label>
+                <select asp-for="IdTipodeformacion" class ="form-control" asp-items="ViewBag.IdTipodeformacion"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duraciontotal" class="control-label"></label>
+                <input asp-for="Duraciontotal" class="form-control" />
+                <span asp-validation-for="Duraciontotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdRed" class="control-label"></label>
+                <select asp-for="IdRed" class ="form-control" asp-items="ViewBag.IdRed"></select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

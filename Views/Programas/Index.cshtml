@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PROYECTORADIX.Models.Programa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Creditos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VersionPrograma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuracionLectiva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuracionProductiva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duraciontotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRedNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipodeformacionNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creditos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VersionPrograma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DuracionLectiva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DuracionProductiva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duraciontotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRedNavigation.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipodeformacionNavigation.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
