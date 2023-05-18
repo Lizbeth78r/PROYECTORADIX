@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using PROYECTORADIX.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Radix1Context>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQL"));
+});
 
 var app = builder.Build();
 

@@ -6,12 +6,14 @@ namespace PROYECTORADIX.Models;
 
 public partial class Area
 {
+
+    [Required(ErrorMessage = "El Código es obligatorio")]
+    [RegularExpression("[0-9]")]
     public int Codigo { get; set; }
-    [Required(ErrorMessage = "[El id es obligatorio")]
-    [RegularExpression("[0-9]{2}")]
+
+    [Required(ErrorMessage = "El Nombre es obligatorio")]
+    [RegularExpression("[a-zA-Z]{2,20}")]
     public string Nombre { get; set; } = null!;
-    [Required(ErrorMessage = "[El id es obligatorio")]
-    [RegularExpression("[a-zA-Z]")]
     public bool Estado { get; set; }
     public virtual ICollection<Red> Reds { get; set; } = new List<Red>();
 
